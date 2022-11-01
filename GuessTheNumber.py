@@ -9,7 +9,7 @@ print("I'm gonna pick a number between 1 and 100 and you need to guess it")
 print("Let's start")
 
 random_number = int(random.randint(1,100))                                      #computer picks random number
-print(random_number)                                                            #cheating the computer to guess it in first try and check the "attempts if"
+
 print("Pick a number(I'm gonna tell you if it's lower or higher than mine)")
 
 guess = input("Pick a number between 1 and 100: ")
