@@ -9,7 +9,8 @@ player = ""
 while player == "":
     print("Choose one:")
     player = input("rock, paper or scissors ?: ")
-    print()
+    print() #makes some space
+
     if player == computer:                                     
         print("%s, it's a tie" %computer)
 
@@ -20,7 +21,10 @@ while player == "":
     elif player == "scissors" and computer == "paper":
         print("%s, you win " %computer)                     
     else: print("%s, you lose" %computer) 
+
+    if player != "rock" or "paper" or "scissors":
+        break     #just something to end the program 
     
-    print()
+    print() #makes some space
     player = ""
     computer = options[random.randint(0,2)]
