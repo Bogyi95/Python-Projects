@@ -22,9 +22,6 @@ while player == "":
         print("%s, you win " %computer)                     
     else: print("%s, you lose" %computer) 
 
-    if player != "rock" or "paper" or "scissors":
-        break     #just something to end the program 
-    
     print() #makes some space
     player = ""
     computer = options[random.randint(0,2)]
