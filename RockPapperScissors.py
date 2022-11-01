@@ -1,4 +1,4 @@
-from lib2to3.pgen2.token import EQUAL
+#Rock Paper Scissors Game
 import random
 
 options = ["rock", "paper", "scissors"]
