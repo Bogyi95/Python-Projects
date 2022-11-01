@@ -26,10 +26,10 @@ while int(guess) != random_number:                                              
         print("Too low")
         guess = input("Pick another: ")
         attempts += 1
-else:  
-    attempts += 1                                                                         #else if the numbers are equal ; cuz ther is no other option
+else:                                                                           #else if the numbers are equal ; cuz ther is no other option
+    attempts += 1                                                                       
     if attempts == 1:
-        print("WOW that's my number. You guessed it in one try!")
+        print("WOW that's my number. You guessed it in first try!")
     else:                                      
         print("You won that's my number")
         print("You guessed my number in: %s attempts" %attempts)
