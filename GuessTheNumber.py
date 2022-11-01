@@ -14,13 +14,13 @@ print("Pick a number(I'm gonna tell you if it's lower or higher than mine)")
 
 guess = input("Pick a number between 1 and 100: ")
 
-while int(guess) != random_number:
-    if int(guess) > random_number:
+while int(guess) != random_number:          #while the numbers are different do:
+    if int(guess) > random_number:          #if the guessed number is higher
         print("Too high")
         guess = input("Pick another: ")
-    if int(guess) < random_number:
+    if int(guess) < random_number:          #if the guessed number is lower
         print("Too low")
         guess = input("Pick another: ")
-    else:
-        print("You won that's my number")
+else:                                       #else if the numbers are equal ; cuz ther is no other option
+    print("You won that's my number")
 
