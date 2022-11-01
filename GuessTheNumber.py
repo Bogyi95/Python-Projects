@@ -16,6 +16,10 @@ guess = input("Pick a number between 1 and 100: ")
 
 attempts = 0
 
+while int(guess) < 1 or int(guess) > 100:
+    print("Ty durniu you picked a number outside of the range")
+    guess = input("Pick again: ")
+    
 
 while int(guess) != random_number:                                              #while the numbers are different do:
     if int(guess) > random_number:                                              #if the guessed number is higher
