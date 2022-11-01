@@ -1,5 +1,4 @@
 import random
-from turtle import clearscreen
 
 options = ["rock", "paper", "scissors"]
 
