@@ -4,9 +4,9 @@ import random
 min_value = 1
 max_value = 6
 
-roll = "yes"
+roll = "y"
 
-while roll == "yes" or roll == "y":
+while roll == "y":
 
     print("Rolling the dice")
     print("You rolled :")
