@@ -15,4 +15,4 @@ while roll == "y":
     print(random.randint(min_value, max_value))
     print("Do you want to roll again?")
 
-    roll = input("Type y or n : ")
+    roll = input("Type y to continue(anything other than y will close program) : ")
