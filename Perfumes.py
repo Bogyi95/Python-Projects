@@ -25,8 +25,6 @@ print(price[7].text)
 new_ml = ml[3].text
 new_price = price[7].text
 
+#sending values to database
 c.execute('''INSERT INTO perfumy VALUES(?,?,?)''', (title, new_ml, new_price))
 conn.commit()
-
-df = pd.read_sql_query('''SELECT * FROM perfumy''', conn)
-print (df)
