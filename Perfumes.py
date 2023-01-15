@@ -2,7 +2,6 @@
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
-import pandas as pd
 
 conn = sqlite3.connect('perfumy.db')
 c = conn.cursor()
@@ -10,9 +9,7 @@ c = conn.cursor()
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'}
 r = requests.get('http://douglas.pl/pl/p/3001004983?variant=843605', headers=headers).text
-
 soup = BeautifulSoup(r, 'lxml')
-
 
 title = soup.title.text
 ml = soup.findAll("div", {"class","product-detail__variant-name"},)
