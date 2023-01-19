@@ -1,3 +1,4 @@
+#Rozbuduje go on inne waluty , interface i wyciagne ze strony dokladne kursy na wszystkie waluty
 
 print("Currency converter PLN>USD")
 
