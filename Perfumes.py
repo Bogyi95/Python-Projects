@@ -12,7 +12,7 @@ r = requests.get('http://douglas.pl/pl/p/3001004983?variant=843605', headers=hea
 soup = BeautifulSoup(r, 'lxml')
 
 title = soup.title.text
-ml = soup.findAll("div", {"class","product-detail__variant-name"},)
+ml = soup.findAll("div", {"class","product-detail__variant-name"})
 price = soup.findAll("span", {"class","product-price__price"})
 
 print(title)
