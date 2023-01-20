@@ -8,10 +8,10 @@ r = requests.get(url).text
 soup = BeautifulSoup(r, 'lxml')
 
 
-kurs = soup.find("div", {"class","profilLast"}).text.strip()
+kurs = soup.find("div", {"class","profilLast"}).text.strip().replace(',','.',-1)
 print(kurs)
 
 iloscPLN = input("Podaj ilosc PLN: ")
-iloscUSD = float(iloscPLN) * int(kurs)
+iloscUSD = float(iloscPLN) / float(kurs)
 
 print(round(iloscUSD, 2))
