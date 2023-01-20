@@ -8,7 +8,7 @@ r = requests.get(url).text
 soup = BeautifulSoup(r, 'lxml')
 
 
-kurs = soup.find("div", {"class","profilLast"}).text.strip().replace(',','.',-1)
+kurs = soup.find("div", {"class","profilLast"}).text.strip().replace(',','.')
 print(kurs)
 
 iloscPLN = input("Podaj ilosc PLN: ")
