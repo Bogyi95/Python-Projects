@@ -2,36 +2,48 @@ import requests
 from tkinter import *
 from tkinter import ttk
 
+result = ''
+def convert():
+    
+    from_currency = currency_from_var.get()
+    to_currency = currency_to_var.get()
+    amount = amount_to_convert.get()
+    response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_currency}&to={to_currency}")
+    result = response.json()['rates'][to_currency]
+    result_label.config(text=result)
+
 #####################################GUI####################################################
-#tworzenie okna aplikacji
+#creating the window
 root = Tk()
-root.title("Currencry Converter")
+root.title("Currency Converter")
 root.geometry("300x300")
 
-#tworzenie boxow do wpisywania
-currencyFrom = Entry(root, width=35, borderwidth=5) 
-currencyTo = Entry(root,width=35, borderwidth=5)
-wynik = Entry(root,width=35,borderwidth=5)
-#tworzenie przycisku
-przycisk = Button(root, text="Convert")
-#wrzucanie boxow i przycisku do okna
-currencyFrom.pack(pady=20)
-currencyTo.pack()
+
+#creating entry to enter the amount to convert 
+amount_to_convert = ttk.Entry(root, width=15)
+amount_to_convert.pack(pady=5)
+
+#creating drop-down menu
+currency_from_var = StringVar(root)
+currency_from_var.set("USD")
+dropdown_from = OptionMenu(root, currency_from_var, "USD", "PLN", "EUR")
+dropdown_from.pack()
+
+
+#drop down menu 
+currency_to_var = StringVar(root)
+currency_to_var.set("PLN")
+dropdown_to = OptionMenu(root, currency_to_var, "USD", "PLN", "EUR")
+dropdown_to.pack()
+
+#creating convert button
+przycisk = ttk.Button(root, text="Convert", command=convert)
 przycisk.pack()
-wynik.pack()
 
+#displaying the result as label
+result_label = Label(root, text=result)
+result_label.pack()
+
+#this is for the window to not close unless the loop is broken
 root.mainloop()
-
-##############################################################################################
-
-from_currency = str(input("Enter in the currency you'd like to exchange from: ")).upper()
-
-to_currency = str(input("Enter in the currency  you'd like to exchange to: ")).upper()
-
-amount = float(input("Enter in the amout of money: "))
-
-response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_currency}&to={to_currency}")
-
-print(f"{amount} {from_currency} is {response.json()['rates'][to_currency]} {to_currency}")
-
-###################################################################################################
+ 
